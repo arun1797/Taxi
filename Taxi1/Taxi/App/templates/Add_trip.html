@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <title>Document</title>
+</head>
+<style>
+  footer {
+    background-color: yellow;
+    color: black;
+    padding: 20px;
+}
+
+.footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.footer-links a {
+    text-decoration: none;
+    color: #333;
+    margin: 0 10px;
+}
+
+.copyright {
+    text-align: center;
+}
+
+
+</style>
+
+<body>
+    <nav class="navbar navbar-expand-lg" style="background-color: yellow;color: black;">
+        <div class="container  ">
+            <a class="nav-link " href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <img src="https://seeklogo.com/images/T/taxi-vehicle-sign-logo-04DAE3D598-seeklogo.com.png" width="50px" height="50px" alt="">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse " id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active text-dark" aria-current="page" href="">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active text-dark" href="#">Signup</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active text-dark" href="#">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active text-dark" href="{% url 'Add_trip' %}">Add Trips</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active text-dark" href="{% url 'view_trip' %}">View Trips</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- ********* -->
+        <h3 class="text-center mt-5">Add Trip</h3>
+        <form method="post">
+          {% csrf_token %}
+          <label for="driver">Driver:</label>
+          <input type="text" id="driver" name="driver" required><br><br>
+          
+          <label for="start_date">Start Date:</label>
+          <input type="date" id="start_date" name="start_date" required><br><br>
+          
+          <label for="end_date">End Date:</label>
+          <input type="date" id="end_date" name="end_date" ><br><br>
+          
+          <label for="vehicle_no">Vehicle Number:</label>
+          <input type="text" id="vehicle_no" name="vehicle_no" required><br><br>
+          
+          <label for="start_kilometer">Start Kilometer:</label>
+          <input type="text" id="start_kilometer" name="start_kilometer" required><br><br>
+          
+          <label for="end_kilometer">End Kilometer:</label>
+          <input type="text" id="end_kilometer" name="end_kilometer" ><br><br>
+          
+          <label for="guest_name">Guest Name:</label>
+          <input type="text" id="guest_name" name="guest_name" required><br><br>
+          
+          <button type="submit">Submit</button>
+      </form>
+    <!-- ************ -->
+    <div class="container text-center">
+        <div class="row mt-5">
+          <div class="col-md-4">
+            <div class="card mb-3">
+              <img src="https://cdni.autocarindia.com/Utils/ImageResizer.ashx?n=https://cdni.autocarindia.com/Galleries/20201015102234_2021-Toyota-Innova-Crysta-facelift-white-studio.jpg&w=373&h=245&q=75&c=1" height="290px" class="card-img-top" alt="Toyota Innova">
+              <div class="card-body">
+                <h3 class="card-title">Toyota <span style="color: yellow;"><b>Innova</b></span></h3>
+                <h5 class="card-title">Start @ <i class="bi bi-currency-rupee"></i>-300</h5>
+                <h5 class="card-title"><i class="bi bi-person-fill"></i> 5-7 Persons</h5>
+                <a href="#" class="btn " style="background-color: yellow;color: black;">Book Now</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card mb-3">
+              <img src="https://imgd-ct.aeplcdn.com/1056x660/n/56buusa_1483112.jpg?q=80" height="290px" class="card-img-top" alt="Maruti Suzuki Swift Dzire">
+              <div class="card-body">
+                <h3 class="card-title">Maruthi <span style="color: yellow;"><b>Swift</b></span></h3>
+                <h5 class="card-title">Start @ <i class="bi bi-currency-rupee"></i>-200</h5>
+                <h5 class="card-title"><i class="bi bi-person-fill"></i> 3-5 Persons</h5>
+                <a href="#" class="btn " style="background-color: yellow;color: black;">Book Now</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card mb-3">
+              <img src="https://m.atcdn.co.uk/vms/media/383e0ed831f14f9280ef084f1b009b68.jpg" height="290px" class="card-img-top" alt="Hyundai i20">
+              <div class="card-body">
+                <h3 class="card-title">Hyundai <span style="color: yellow;"><b>i20</b></span></h3>
+                <h5 class="card-title">Start @ <i class="bi bi-currency-rupee"></i>-270</h5>
+                <h5 class="card-title"><i class="bi bi-person-fill"></i> 3-4 Persons</h5>
+                <a href="#" class="btn " style="background-color: yellow;color: black;">Book Now</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+    <!-- ********** -->
+    <footer>
+      <div class="footer-links">
+          <a href="#">About Us</a>
+          <a href="#">Contact Us</a>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+          <a href="#">Careers</a>
+      </div>
+      <div class="copyright">
+          <p>&copy; 2024 [Your Taxi Company Name]. All rights reserved.</p>
+      </div>
+  </footer>
+
+    <!-- *********** -->
+</body>
+
+</html>
